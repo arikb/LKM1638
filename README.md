@@ -24,22 +24,22 @@ along with this program.  If not, see http://www.gnu.org/licenses/
 
 ## Usage:
 
-from machine import Pin
-from LKM1638 import LKM1638, LED_RED, LED_NONE
+	from machine import Pin
+	from LKM1638 import LKM1638, LED_RED, LED_NONE
 
-display = LKM1638(Pin.board.GP8, Pin.board.GP30, Pin.board.GP31)
-display.setup(True, 7)
+	display = LKM1638(Pin.board.GP8, Pin.board.GP30, Pin.board.GP31)
+	display.setup(True, 7)
 
-n = 0                 
-while True:
-    display.print_number(n, 16)
-    n+=1234
+	n = 0                 
+	while True:
+    	display.print_number(n, 16)
+    	n+=1234
     
-    for i, button in enumerate(display.get_buttons()):
-        if button:
-            display.set_led(i, LED_RED)
-        else:
-            display.set_led(i, LED_NONE)
+    	for i, button in enumerate(display.get_buttons()):
+    	    if button:
+        	    display.set_led(i, LED_RED)
+     	   else:
+        	    display.set_led(i, LED_NONE)
 
 ## WARNING ##
 
